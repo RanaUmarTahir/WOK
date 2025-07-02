@@ -1,0 +1,51 @@
+<body>
+  <div class="page">
+    <div class="donatecard">
+      <img
+        class="donateImg"
+        src="../../../assets/images/donate.jpg"
+        alt="doante"
+      />
+      <strong>Donate now</strong>
+      <p>
+        Your Small Donations can give Big Smiles! By donating now, you’re
+        helping provide essential resources, hope, and opportunities to those in
+        need. Every contribution, big or small, makes a meaningful impact,
+        creating a brighter future for individuals and communities. Join us in
+        this mission of compassion and generosity—donate today and be the
+        difference!
+      </p>
+    </div>
+    <div class="donatecard">
+      <strong>Digital Wallets</strong>
+      <p>Send via <span style="color: greenyellow;">EasyPaisa</span>, <span style="color: rgb(245, 16, 0);">JazzCash</span>, <span style="color: rgb(255, 153, 0);">NayaPay</span> or <span style="color: rgb(47, 172, 255);">SadaPay</span> on</p>
+      <p>
+        Donation ID:
+        <strong (click)="copyText(donationId)" title="Copy"   [style.color]="copied ? 'green' : 'black'"
+        >{{
+          donationId
+        }}</strong>
+
+        <span *ngIf="copied" style="color: green">Copied!</span>
+      </p>
+      <p>Account Name: Rana M Umar Tahir</p>
+      <p>Go to the Application of your JazzCash/ EasyPaisa/ NayaPay/ SadaPay Account, paste our Account Number there & donate, Your small donations can give big smiles. </p>
+   
+   <br>
+   <strong>Bank Transfer</strong>
+   <p>Send via Bank Transfer on <span style="color: green;">HBL(Habib Bank Limited)</span></p>
+      <p>
+       Account Number:
+        <strong (click)="copyText(bankId)" title="Copy"   [style.color]="copied ? 'green' : 'black'"
+        >{{
+          bankId
+        }}</strong>
+
+        <span *ngIf="copied" style="color: green">Copied!</span>
+      </p>
+      <p>Account Name: Rana M Umar Tahir</p>
+      <p>Go to the Application of your Bank Account, Select Habib Bank Limited(HBL) in bank transfer, paste our Account Number there & donate, Your small donations can give big smiles. </p>
+
+  </div>
+  </div>
+</body>

@@ -1,0 +1,41 @@
+body {
+  margin: 8px;
+}
+
+.page {
+  display: flex;
+  gap: 15px;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%;
+}
+.donatecard {
+  display: flex;
+  width: 45%;
+  padding: 5px;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  background-color: aliceblue;
+}
+.donateImg {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+strong {
+  margin: 5px;
+  font-size: 24px;
+}
+p {
+  margin: 5px;
+}
+@media(max-width: 768px){
+    p{
+        font-size: small;
+    }
+    strong{
+        font-size: medium;
+    }
+}

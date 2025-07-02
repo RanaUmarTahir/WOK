@@ -1,0 +1,46 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      
+    <div class="carousel-indicators">
+      <button
+        *ngFor="let slide of getSlides(); let i = index"
+        type="button"
+        data-bs-target="#carouselExample"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'Slide ' + (i + 1)">
+      </button>
+    </div>
+
+    <div class="carousel-inner">
+      <div
+        *ngFor="let slide of getSlides(); let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <div class="d-flex justify-content-center align-items-center custom-slide">
+          <img [src]="slide[0]" class="carousel-img side-img" alt="side-left">
+          <img [src]="slide[1]" class="carousel-img center-img" alt="center">
+          <img [src]="slide[2]" class="carousel-img side-img" alt="side-right">
+        </div>
+      </div>
+    </div>
+  
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <br>
+  <h2>Core Team</h2>
+  <p>We are proud to present our exceptional leadership team, a diverse group of professionals united by a shared commitment to excellence, cultural preservation, and social impact. Comprising experts in fields such as mass communication, law, computer science, business, and finance, our team brings a wealth of experience from multinational firms, governmental initiatives, and community-driven organizations.</p>
+  <div class="card" *ngFor="let user of users">
+    <div class="card-text">
+ <p><strong>{{user.name}}</strong> (<span>{{user.designation}}</span>)</p> 
+ <p>{{user.details}}</p>
+</div>
+ <img class="card-img" [src]="user.image">
+</div>
+ 
