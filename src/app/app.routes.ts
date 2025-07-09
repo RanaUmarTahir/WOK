@@ -8,6 +8,7 @@ import { JoinUsComponent } from './components/join-us/join-us.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CoreTeamComponent } from './components/core-team/core-team.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 export const routes: Routes = [
   {
@@ -44,8 +45,12 @@ export const routes: Routes = [
   },
   {
     path: 'core-team',
-    component: CoreTeamComponent
-  }
+    component: CoreTeamComponent,
+  },
+  {
+    path: 'loader',
+    component: LoaderComponent,
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
