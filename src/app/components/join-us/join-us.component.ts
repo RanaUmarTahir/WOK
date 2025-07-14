@@ -11,7 +11,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 })
 export class JoinUsComponent {
   joinUsForm: any = {};
-    constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.joinUsForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -49,7 +49,7 @@ export class JoinUsComponent {
       formData.university === 'Other'
         ? formData.other_university
         : formData.university;
-    
+
     const payload = {
       name: formData.name,
       contact: formData.contact,
@@ -61,16 +61,20 @@ export class JoinUsComponent {
       experience: formData.experience,
     };
     console.log(payload);
-    this.http.post('http://localhost:5000/api/volunteers/create', payload).subscribe({
-      next: (res) => {
-        console.log('jkanasndn');
-        alert(`${payload.name}Submitted Succesfully`);
-        this.joinUsForm.reset();
-      },
-      error: (err) => {
-        alert('Error: ' + (err.error?.message || 'Something went wrong'));
-      }
-});
-
+    this.http
+      .post(
+        'https://wok-production.up.railway.app/api/volunteers/create',
+        payload
+      )
+      .subscribe({
+        next: (res) => {
+          console.log('jkanasndn');
+          alert(`${payload.name}Submitted Succesfully`);
+          this.joinUsForm.reset();
+        },
+        error: (err) => {
+          alert('Error: ' + (err.error?.message || 'Something went wrong'));
+        },
+      });
   }
 }

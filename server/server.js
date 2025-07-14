@@ -15,7 +15,12 @@ const app = express();
 dotenv.config();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://wokpk.netlify.app"],
+    methods: ["GET", "POST"],
+  })
+);
 app.use(bodyParser.json());
 
 app.use("/api/volunteers", volunteerRoutes);
