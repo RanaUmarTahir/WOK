@@ -2,7 +2,14 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import path from "path";
+import { dirname } from "path";
+
 import volunteerRoutes from "./routes/volunteer.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 dotenv.config();
